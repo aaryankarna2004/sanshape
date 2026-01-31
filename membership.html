@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership | Sanshape Fitness</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+            font-family: sans-serif;
+        }
+
+        body{
+            background: #0f0f0f;
+            color: #fff;
+        }
+
+        /* NAVBAR (SAME AS SANSHAPE.HTML) */
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            margin: auto;
+            padding-top: 20px;
+        }
+
+        .logo{
+            width: 150px;
+        }
+
+        nav ul{
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li{
+            margin: 0 20px;
+        }
+
+        nav ul li a{
+            font-size: 15px;
+            color: #fff;
+            text-transform: uppercase;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav ul li a::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 2px;
+            background: #00c2ff;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover{
+            color: #00c2ff;
+        }
+
+        nav ul li a:hover::after{
+            width: 100%;
+        }
+
+        nav button{
+            background: #ff3402;
+            border: none;
+            padding: 12px 35px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 2rem;
+            cursor: pointer;
+        }
+
+        /* MEMBERSHIP SECTION */
+        .membership{
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .membership h1{
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .membership p{
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 50px;
+        }
+
+        .plans{
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .plan{
+            background: #1a1a1a;
+            width: 280px;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #222;
+            transition: .3s;
+        }
+
+        .plan:hover{
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px #ff3402;
+        }
+
+        .plan h2{
+            color: #ff3402;
+            margin-bottom: 15px;
+        }
+
+        .price{
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .plan ul{
+            margin-bottom: 20px;
+        }
+
+        .plan ul li{
+            font-size: 13px;
+            margin: 8px 0;
+            color: #ddd;
+        }
+
+        .plan button{
+            padding: 10px 30px;
+            border: none;
+            background: #ff3402;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 2rem;
+            cursor: pointer;
+        }
+
+        .highlight{
+            border: 2px solid #ff3402;
+        }
+
+        /* ADMISSION */
+        .admission{
+            margin-top: 60px;
+            padding: 25px;
+            background: #111;
+            border-radius: 12px;
+        }
+
+        .admission h3{
+            color: #ff3402;
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
+        footer{
+            margin-top: 80px;
+            padding: 20px;
+            background: #000;
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <img src="WhatsApp_Image_2026-01-25_at_14.44.13-removebg-preview.png" class="logo" alt="Logo">
+
+    <ul>
+        <li><a href="Sanshape.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="#">Shop</a></li>
+    </ul>
+
+    <button>More</button>
+</nav>
+
+<!-- MEMBERSHIP CONTENT -->
+<section class="membership">
+    <h1>Exclusive Membership Plans</h1>
+    <p>Where Premium Training Meets Perfection</p>
+
+    <div class="plans">
+
+        <div class="plan">
+            <h2>1 Month</h2>
+            <div class="price">Rs. 2,000</div>
+            <ul>
+                <li>Full Gym Access</li>
+                <li>Cardio & Strength</li>
+                <li>Trainer Guidance</li>
+            </ul>
+            <button>Join Now</button>
+        </div>
+
+        <div class="plan">
+            <h2>3 Months</h2>
+            <div class="price">Rs. 5,000</div>
+            <ul>
+                <li>Save Rs. 1,000</li>
+                <li>All Equipment Access</li>
+                <li>Trainer Support</li>
+            </ul>
+            <button>Join Now</button>
+        </div>
+
+        <div class="plan">
+            <h2>6 Months</h2>
+            <div class="price">Rs. 10,000</div>
+            <ul>
+                <li>Save Rs. 2,000</li>
+                <li>Premium Machines</li>
+                <li>Personal Guidance</li>
+            </ul>
+            <button>Join Now</button>
+        </div>
+
+        <div class="plan highlight">
+            <h2>1 Year</h2>
+            <div class="price">Rs. 18,000</div>
+            <ul>
+                <li>Just Rs. 1,500 / month</li>
+                <li>Best Value Plan</li>
+                <li>Priority Support</li>
+            </ul>
+            <button>Best Choice</button>
+        </div>
+
+    </div>
+
+    <div class="admission">
+        <h3>Grand Opening Privilege</h3>
+        <p><strong>Admission Fee: Rs. 500</strong></p>
+        <p>Starting from opening day</p>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Sanshape Fitness Gym | Not Just a Gym — A Premium Experience
+</footer>
+
+</body>
+</html>
