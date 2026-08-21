@@ -86,6 +86,13 @@ nav ul li a:hover::after{
     width:100%;
 }
 
+nav ul li a.active{
+    color:#00c2ff;
+}
+nav ul li a.active::after{
+    width:100%;
+}
+
 nav button{
     background:#ff3402;
     border:none;
@@ -247,60 +254,6 @@ nav button{
     cursor:pointer;
 }
 
-
-
-/* FOOTER */
-footer{
-    background:#000;
-    padding:40px 10%;
-}
-
-.footer-content{
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-}
-
-.footer-box h4{
-    color:#ff3402;
-    margin-bottom:10px;
-}
-
-.footer-box p,
-.footer-box a{
-    font-size:13px;
-    color:#aaa;
-}
-
-.social a{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    background:#111;
-    color:#ff3402;
-    margin-right:12px;
-    font-size:18px;
-    transition:.3s;
-}
-
-.social a:hover{
-    background:#ff3402;
-    color:#fff;
-    transform:translateY(-5px);
-}
-
-.footer-box iframe{
-    max-width:100%;
-    filter:grayscale(1);
-}
-
-.footer-box iframe:hover{
-    filter:grayscale(0);
-}
-
 .services{
     padding:80px;
     background:#050505;
@@ -430,6 +383,16 @@ footer{
     color:#aaa;
 }
 
+.footer-box iframe{
+    max-width:100%;
+    filter:grayscale(1);
+    border-radius:10px;
+}
+
+.footer-box iframe:hover{
+    filter:grayscale(0);
+}
+
 /* ================= SIDE SOCIAL BAR ================= */
 .side-social{
     position:fixed;
@@ -459,10 +422,6 @@ footer{
     width:65px;
 }
 
-
-
-
-
 </style>
 </head>
 
@@ -474,13 +433,14 @@ footer{
     <img src="../assets/images/WhatsApp_Image_2026-01-25_at_14.44.13-removebg-preview.png" class="logo">
 
     <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="#">Services</a></li>
         <li><a href="membership.html">Membership</a></li>
+        <li><a href="shop.html">Shop</a></li>
     </ul>
 
-    <button>More</button>
+    <button onclick="openForm()">More</button>
 </nav>
 
 <div class="hero-content">
@@ -493,7 +453,7 @@ footer{
     <p>Transform your Body, Transform your Life</p>
 
     <button onclick="openForm()">Get Membership</button>
-    <button class="know_more">Know More</button>
+    <button class="know_more" onclick="window.location.href='about.html'">Know More</button>
 </div>
 </div>
 
@@ -578,30 +538,6 @@ footer{
 </div>
 </div>
 
-<!-- FOOTER -->
-<footer>
-
-        <div class="footer-box">
-    <h4>Location</h4>
-    <iframe 
-        src="https://www.google.com/maps?q=Kathmandu,Nepal&output=embed"
-        width="250"
-        height="150"
-        style="border:0; border-radius:10px;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-</div>
-
-
-        </div>
-
-    </div>
-
-</footer>
-
-
 <!-- JS -->
 <script>
 const slides = document.querySelectorAll(".slide");
@@ -628,6 +564,7 @@ function closeForm(){
 }
 </script>
 
+<!-- FOOTER -->
 <footer class="main-footer">
 
     <div class="footer-top">
@@ -635,11 +572,11 @@ function closeForm(){
         <div class="footer-col">
             <h4>Quick Links</h4>
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Blogs</a></li>
-                <li><a href="#">Contact</a></li>
+              <li><a href="index.html">Home</a></li>
+<li><a href="about.html" class="active">About</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="membership.html">Membership</a></li>
+<li><a href="shop.html">Shop</a></li>
             </ul>
         </div>
 
@@ -673,6 +610,19 @@ function closeForm(){
             </div>
         </div>
 
+        <div class="footer-col">
+            <h4>Location</h4>
+            <iframe
+                src="https://www.google.com/maps?q=Kathmandu,Nepal&output=embed"
+                width="220"
+                height="130"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
     </div>
 
     <div class="footer-bottom">
@@ -687,7 +637,6 @@ function closeForm(){
     <a href="https://www.instagram.com/sanshape_fitness/" class="instagram"><i class="fa-brands fa-instagram"></i></a>
     <a href="https://www.tiktok.com/@sanshape.fitness5" class="tiktok"><i class="fa-brands fa-tiktok"></i></a>
 </div>
-
 
 </body>
 </html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | Sanshape Fitness</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-decoration:none;
+    list-style:none;
+    font-family:sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:#fff;
+}
+
+/* NAVBAR (SAME AS OTHER PAGES) */
+nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:90%;
+    margin:auto;
+    padding:20px 0;
+}
+
+.logo{
+    width:150px;
+}
+
+nav ul{
+    display:flex;
+    align-items:center;
+}
+
+nav ul li{
+    margin:0 20px;
+}
+
+nav ul li a{
+    color:#fff;
+    font-size:15px;
+    text-transform:uppercase;
+    position:relative;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#00c2ff;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#00c2ff;
+}
+nav ul li a:hover::after{
+    width:100%;
+}
+
+nav ul li a.active{
+    color:#00c2ff;
+}
+nav ul li a.active::after{
+    width:100%;
+}
+
+nav button{
+    background:#ff3402;
+    border:none;
+    padding:12px 35px;
+    color:#fff;
+    font-weight:600;
+    border-radius:2rem;
+    cursor:pointer;
+}
+
+/* SHOP HERO */
+.shop-hero{
+    text-align:center;
+    padding:70px 10% 20px;
+}
+
+.shop-hero h1{
+    font-size:42px;
+    text-transform:uppercase;
+}
+
+.shop-hero h1 span{
+    color:#ff3402;
+}
+
+.shop-hero p{
+    font-size:14px;
+    color:#ccc;
+    margin-top:10px;
+}
+
+/* FILTER TABS */
+.filter-tabs{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:40px 0;
+}
+
+.filter-tabs button{
+    background:#1a1a1a;
+    border:1px solid #262626;
+    color:#ccc;
+    padding:10px 22px;
+    border-radius:2rem;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.filter-tabs button:hover,
+.filter-tabs button.active{
+    background:#ff3402;
+    border-color:#ff3402;
+    color:#fff;
+}
+
+/* PRODUCT GRID */
+.shop-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:30px;
+    padding:0 10% 90px;
+}
+
+.product-card{
+    background:#151515;
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid #232323;
+    transition:.35s;
+    display:flex;
+    flex-direction:column;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(255,52,2,.25);
+    border-color:#ff3402;
+}
+
+.product-thumb{
+    height:170px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#0c0c0c;
+    position:relative;
+}
+
+.product-thumb i{
+    font-size:52px;
+    color:#ff3402;
+}
+
+.tag{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#00c2ff;
+    color:#000;
+    font-size:11px;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:2rem;
+    text-transform:uppercase;
+}
+
+.product-info{
+    padding:20px 20px 24px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.product-info .category{
+    font-size:11px;
+    color:#00c2ff;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:6px;
+}
+
+.product-info h4{
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.product-info p{
+    font-size:13px;
+    color:#aaa;
+    line-height:1.5;
+    margin-bottom:18px;
+    flex:1;
+}
+
+.product-footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.product-footer .price{
+    font-size:18px;
+    font-weight:700;
+    color:#fff;
+}
+
+.product-footer button{
+    background:#ff3402;
+    border:none;
+    color:#fff;
+    padding:9px 18px;
+    border-radius:2rem;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.product-footer button:hover{
+    background:#ffcc00;
+    color:#000;
+}
+
+/* NOTE STRIP */
+.shop-note{
+    text-align:center;
+    padding:0 10% 80px;
+}
+
+.shop-note p{
+    background:#111;
+    display:inline-block;
+    padding:16px 30px;
+    border-radius:12px;
+    color:#ccc;
+    font-size:13px;
+}
+
+.shop-note strong{
+    color:#ff3402;
+}
+
+/* FOOTER */
+footer{
+    background:#000;
+    padding:20px;
+    text-align:center;
+    font-size:12px;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <img src="../assets/images/WhatsApp_Image_2026-01-25_at_14.44.13-removebg-preview.png" class="logo">
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+    </ul>
+
+    <button onclick="window.location.href='membership.html'">More</button>
+</nav>
+
+<section class="shop-hero">
+    <h1>Sanshape <span>Shop</span></h1>
+    <p>Gear, supplements & apparel to fuel every session.</p>
+</section>
+
+<div class="filter-tabs">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="apparel">Apparel</button>
+    <button data-filter="supplements">Supplements</button>
+    <button data-filter="gear">Gear</button>
+</div>
+
+<section class="shop-grid" id="shopGrid">
+
+    <div class="product-card" data-category="apparel">
+        <div class="product-thumb"><span class="tag">New</span><i class="fa-solid fa-shirt"></i></div>
+        <div class="product-info">
+            <span class="category">Apparel</span>
+            <h4>Sanshape Training Tee</h4>
+            <p>Breathable performance fabric with the Sanshape crest on the chest.</p>
+            <div class="product-footer">
+                <span class="price">Rs. 1,200</span>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" data-category="apparel">
+        <div class="product-thumb"><i class="fa-solid fa-vest"></i></div>
+        <div class="product-info">
+            <span class="category">Apparel</span>
+            <h4>Gym Stringer Vest</h4>
+            <p>Lightweight cut built for lifting days and hot summer sessions.</p>
+            <div class="product-footer">
+                <span class="price">Rs. 950</span>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" data-category="supplements">
+        <div class="product-thumb"><span class="tag">Best Seller</span><i class="fa-solid fa-jar"></i></div>
+        <div class="product-info">
+            <span class="category">Supplements</span>
+            <h4>Whey Protein 1kg</h4>
+            <p>Fast-absorbing whey to support recovery after every workout.</p>
+            <div class="product-footer">
+                <span class="price">Rs. 4,500</span>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" data-category="supplements">
+        <div class="product-thumb"><i class="fa-solid fa-capsules"></i></div>
+        <div class="product-info">
+            <span class="category">Supplements</span>
+            <h4>BCAA Recovery</h4>
+            <p>Reduce muscle soreness and stay fueled through longer sessions.</p>
+            <div class="product-footer">
+                <span class="price">Rs. 2,800</span>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" data-category="gear">
+        <div class="product-thumb"><i class="fa-solid fa-bottle-water"></i></div>
+        <div class="product-info">
+            <span class="category">Gear</span>
+            <h4>Sanshape Shaker Bottle</h4>
+            <p>750ml leak-proof bottle with mixing ball, branded with our logo.</p>
+            <div class="product-footer">
+                <span class="price">Rs. 600</span>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" data-category="gear">
+        <div class="product-thumb"><i class="fa-solid fa-hand-fist"></i></div>
+        <div class="product-info">
+            <span class="category">Gear</span>
+            <h4>Lifting Gloves</h4>
+            <p>Padded grip support for heavy lifts and long training blocks.</p>
+            <div class="product-footer">
+                <span class="price">Rs. 850</span>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<div class="shop-note">
+    <p><strong>Members save 10%</strong> on all shop items. Visit the front desk to redeem your discount.</p>
+</div>
+
+<footer>
+    © 2026 Sanshape Fitness Gym | Not Just a Gym — A Premium Experience
+</footer>
+
+<script>
+const tabs = document.querySelectorAll(".filter-tabs button");
+const cards = document.querySelectorAll(".product-card");
+
+tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        const filter = tab.dataset.filter;
+        cards.forEach(card => {
+            if(filter === "all" || card.dataset.category === filter){
+                card.style.display = "flex";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>

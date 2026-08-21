@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Sanshape Fitness</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-decoration:none;
+    list-style:none;
+    font-family:sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f0f0f;
+    color:#fff;
+}
+
+/* NAVBAR (SAME AS OTHER PAGES) */
+nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:90%;
+    margin:auto;
+    padding:20px 0;
+}
+
+.logo{
+    width:150px;
+}
+
+nav ul{
+    display:flex;
+    align-items:center;
+}
+
+nav ul li{
+    margin:0 20px;
+}
+
+nav ul li a{
+    color:#fff;
+    font-size:15px;
+    text-transform:uppercase;
+    position:relative;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#00c2ff;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#00c2ff;
+}
+nav ul li a:hover::after{
+    width:100%;
+}
+
+nav ul li a.active{
+    color:#00c2ff;
+}
+nav ul li a.active::after{
+    width:100%;
+}
+
+nav button{
+    background:#ff3402;
+    border:none;
+    padding:12px 35px;
+    color:#fff;
+    font-weight:600;
+    border-radius:2rem;
+    cursor:pointer;
+}
+
+/* HERO */
+.services-hero{
+    text-align:center;
+    padding:70px 10% 20px;
+}
+
+.services-hero h1{
+    font-size:42px;
+    text-transform:uppercase;
+}
+
+.services-hero h1 span{
+    color:#ff3402;
+}
+
+.services-hero p{
+    font-size:14px;
+    color:#ccc;
+    margin-top:10px;
+}
+
+/* MAIN SERVICES GRID */
+.services{
+    padding:60px 10%;
+    text-align:center;
+}
+
+.service-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:40px;
+}
+
+.service{
+    background:#0e0e0e;
+    padding:40px 25px;
+    border-radius:15px;
+    transition:.4s;
+    border:1px solid #1c1c1c;
+}
+
+.service i{
+    font-size:40px;
+    color:#ff3402;
+    margin-bottom:20px;
+}
+
+.service h4{
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.service p{
+    color:#aaa;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.service:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(255,52,2,0.4);
+    border-color:#ff3402;
+}
+
+/* PROGRAMS SECTION */
+.programs{
+    padding:20px 10% 80px;
+}
+
+.programs h2{
+    text-align:center;
+    color:#ffcc99;
+    font-size:32px;
+    margin-bottom:50px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.program-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:30px;
+}
+
+.program-card{
+    background:#151515;
+    border:1px solid #232323;
+    border-radius:16px;
+    padding:30px;
+    transition:.3s;
+}
+
+.program-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(255,52,2,.25);
+}
+
+.program-card .icon-row{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.program-card .icon-row i{
+    font-size:24px;
+    color:#00c2ff;
+    background:#0c0c0c;
+    width:50px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+}
+
+.program-card h4{
+    font-size:18px;
+}
+
+.program-card p{
+    font-size:13px;
+    color:#aaa;
+    line-height:1.6;
+    margin-top:12px;
+}
+
+.program-card .duration{
+    display:inline-block;
+    margin-top:18px;
+    font-size:12px;
+    color:#ff3402;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+/* CTA STRIP */
+.cta-strip{
+    text-align:center;
+    padding:60px 10% 90px;
+}
+
+.cta-strip h3{
+    font-size:26px;
+    margin-bottom:15px;
+}
+
+.cta-strip p{
+    color:#ccc;
+    font-size:14px;
+    margin-bottom:30px;
+}
+
+.cta-strip button{
+    background:#ff3402;
+    border:none;
+    padding:14px 40px;
+    color:#fff;
+    font-weight:600;
+    border-radius:2rem;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.cta-strip button:hover{
+    background:#ffcc00;
+    color:#000;
+}
+
+/* FOOTER */
+footer{
+    background:#000;
+    padding:20px;
+    text-align:center;
+    font-size:12px;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <img src="../assets/images/WhatsApp_Image_2026-01-25_at_14.44.13-removebg-preview.png" class="logo">
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="shop.html">Shop</a></li>
+    </ul>
+
+    <button onclick="window.location.href='membership.html'">More</button>
+</nav>
+
+<section class="services-hero">
+    <h1>Our <span>Services</span></h1>
+    <p>Everything you need to train harder, recover better, and stay consistent.</p>
+</section>
+
+<section class="services">
+    <div class="service-box">
+
+        <div class="service">
+            <i class="fa-solid fa-dumbbell"></i>
+            <h4>Certified Trainers</h4>
+            <p>Professional guidance for safe and effective workouts.</p>
+        </div>
+
+        <div class="service">
+            <i class="fa-solid fa-shower"></i>
+            <h4>Shower Facility</h4>
+            <p>Clean and modern shower rooms available.</p>
+        </div>
+
+        <div class="service">
+            <i class="fa-solid fa-lightbulb"></i>
+            <h4>Premium Lighting</h4>
+            <p>World-class lighting & aesthetic design.</p>
+        </div>
+
+        <div class="service">
+            <i class="fa-solid fa-snowflake"></i>
+            <h4>Air Conditioned</h4>
+            <p>Comfortable workout environment (Coming Summer).</p>
+        </div>
+
+        <div class="service">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <h4>Modern Equipment</h4>
+            <p>Premium strength & cardio machines.</p>
+        </div>
+
+        <div class="service">
+            <i class="fa-solid fa-users"></i>
+            <h4>Luxury Space</h4>
+            <p>Spacious, clean & motivating gym environment.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="programs">
+    <h2>Training Programs</h2>
+
+    <div class="program-list">
+
+        <div class="program-card">
+            <div class="icon-row">
+                <i class="fa-solid fa-person-running"></i>
+                <h4>Personal Training</h4>
+            </div>
+            <p>One-on-one sessions built around your goals, with a certified trainer tracking every rep and rest.</p>
+            <span class="duration">45–60 min / session</span>
+        </div>
+
+        <div class="program-card">
+            <div class="icon-row">
+                <i class="fa-solid fa-people-group"></i>
+                <h4>Group Classes</h4>
+            </div>
+            <p>High-energy group sessions covering strength, conditioning, and functional training.</p>
+            <span class="duration">50 min / class</span>
+        </div>
+
+        <div class="program-card">
+            <div class="icon-row">
+                <i class="fa-solid fa-weight-scale"></i>
+                <h4>Body Transformation</h4>
+            </div>
+            <p>A structured plan combining training and nutrition guidance to hit your target physique.</p>
+            <span class="duration">8–12 week program</span>
+        </div>
+
+        <div class="program-card">
+            <div class="icon-row">
+                <i class="fa-solid fa-hand-holding-medical"></i>
+                <h4>Recovery & Mobility</h4>
+            </div>
+            <p>Stretching and mobility sessions to reduce injury risk and improve range of motion.</p>
+            <span class="duration">30 min / session</span>
+        </div>
+
+        <div class="program-card">
+            <div class="icon-row">
+                <i class="fa-solid fa-child-reaching"></i>
+                <h4>Beginner Orientation</h4>
+            </div>
+            <p>New to the gym? A free walkthrough of equipment, form basics, and a starter routine.</p>
+            <span class="duration">Free with membership</span>
+        </div>
+
+        <div class="program-card">
+            <div class="icon-row">
+                <i class="fa-solid fa-apple-whole"></i>
+                <h4>Nutrition Guidance</h4>
+            </div>
+            <p>Simple, sustainable meal guidance from our trainers to support your training goals.</p>
+            <span class="duration">Ongoing support</span>
+        </div>
+
+    </div>
+</section>
+
+<section class="cta-strip">
+    <h3>Ready to get started?</h3>
+    <p>Pick a plan and our trainers will handle the rest.</p>
+    <button onclick="window.location.href='membership.html'">View Membership Plans</button>
+</section>
+
+<footer>
+    © 2026 Sanshape Fitness Gym | Not Just a Gym — A Premium Experience
+</footer>
+
+</body>
+</html>
