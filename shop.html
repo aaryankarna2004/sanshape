@@ -271,6 +271,100 @@ footer{
     font-size:12px;
     color:#aaa;
 }
+
+/* MOBILE MENU TOGGLE */
+.menu-toggle{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:8px;
+}
+
+.menu-toggle span{
+    width:26px;
+    height:3px;
+    background:#fff;
+    border-radius:2px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:1024px){
+    .shop-hero h1{
+        font-size:34px;
+    }
+    .shop-grid{
+        padding-left:6%;
+        padding-right:6%;
+    }
+}
+
+@media (max-width:768px){
+    nav{
+        flex-wrap:wrap;
+        padding-bottom:15px;
+    }
+    .menu-toggle{
+        display:flex;
+        order:2;
+    }
+    nav button{
+        order:3;
+        padding:10px 22px;
+        font-size:13px;
+    }
+    nav ul{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        order:4;
+        background:#111;
+        margin-top:15px;
+        border-radius:12px;
+        padding:15px 0;
+    }
+    nav ul.show{
+        display:flex;
+    }
+    nav ul li{
+        margin:12px 0;
+        text-align:center;
+    }
+
+    .shop-hero{
+        padding:50px 6% 10px;
+    }
+    .shop-hero h1{
+        font-size:28px;
+    }
+    .shop-grid{
+        padding:0 6% 60px;
+    }
+    .filter-tabs{
+        margin:30px 6%;
+    }
+}
+
+@media (max-width:480px){
+    .logo{
+        width:110px;
+    }
+    .shop-hero h1{
+        font-size:24px;
+    }
+    .filter-tabs button{
+        padding:8px 16px;
+        font-size:12px;
+    }
+    .shop-note p{
+        padding:14px 20px;
+        font-size:12px;
+    }
+}
 </style>
 </head>
 
@@ -278,6 +372,10 @@ footer{
 
 <nav>
     <img src="assets/images/WhatsApp_Image_2026-01-25_at_14.44.13-removebg-preview.png" class="logo">
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </button>
 
     <ul>
         <li><a href="index.html">Home</a></li>
@@ -411,6 +509,10 @@ tabs.forEach(tab => {
         });
     });
 });
+
+function toggleMenu(){
+    document.querySelector("nav ul").classList.toggle("show");
+}
 </script>
 
 </body>

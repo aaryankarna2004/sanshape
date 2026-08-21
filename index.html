@@ -422,6 +422,170 @@ nav button{
     width:65px;
 }
 
+/* MOBILE MENU TOGGLE */
+.menu-toggle{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:8px;
+    z-index:20;
+}
+
+.menu-toggle span{
+    width:26px;
+    height:3px;
+    background:#fff;
+    border-radius:2px;
+    transition:.3s;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET / IPAD */
+@media (max-width:1024px){
+    .hero-content{
+        left:50px;
+    }
+    .text-slider{
+        width:420px;
+        height:100px;
+    }
+    .slide{
+        font-size:40px;
+    }
+    .main-footer{
+        padding:60px 40px 30px;
+    }
+    .services, .gym-video{
+        padding-left:6%;
+        padding-right:6%;
+    }
+}
+
+@media (max-width:768px){
+    nav{
+        flex-wrap:wrap;
+        padding-bottom:15px;
+    }
+    .menu-toggle{
+        display:flex;
+        order:2;
+    }
+    nav button{
+        order:3;
+        padding:10px 22px;
+        font-size:13px;
+    }
+    nav ul{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        order:4;
+        background:#111;
+        margin-top:15px;
+        border-radius:12px;
+        padding:15px 0;
+    }
+    nav ul.show{
+        display:flex;
+    }
+    nav ul li{
+        margin:12px 0;
+        text-align:center;
+    }
+
+    .hero-content{
+        left:30px;
+        right:30px;
+        top:32%;
+    }
+    .text-slider{
+        width:100%;
+        height:170px;
+    }
+    .slide{
+        font-size:32px;
+        white-space:normal;
+    }
+    .hero-content p{
+        font-size:13px;
+    }
+    .hero-content button{
+        padding:11px 30px;
+        font-size:13px;
+        margin-top:25px;
+    }
+
+    .services{
+        padding:60px 6%;
+    }
+    .services h2{
+        font-size:26px;
+        margin-bottom:40px;
+    }
+
+    .gym-video{
+        padding:60px 6%;
+    }
+
+    .stats{
+        flex-direction:column;
+        gap:30px;
+        padding:50px 8%;
+    }
+
+    .main-footer{
+        padding:50px 6% 20px;
+    }
+
+    .side-social a{
+        width:40px;
+        height:40px;
+        font-size:16px;
+    }
+}
+
+@media (max-width:480px){
+    .logo{
+        width:110px;
+    }
+    .hero-content{
+        top:30%;
+        left:20px;
+        right:20px;
+    }
+    .text-slider{
+        height:150px;
+    }
+    .slide{
+        font-size:26px;
+    }
+    .hero-content button{
+        display:block;
+        width:100%;
+        margin-top:15px;
+        margin-left:0!important;
+    }
+    .hero-content .know_more{
+        margin-top:12px;
+    }
+    .services h2{
+        font-size:22px;
+    }
+    .service{
+        padding:30px 18px;
+    }
+    .stat h3{
+        font-size:32px;
+    }
+    .form-box{
+        width:88%;
+    }
+}
 </style>
 </head>
 
@@ -431,6 +595,10 @@ nav button{
 <div class="hero">
 <nav>
     <img src="assets/images/WhatsApp_Image_2026-01-25_at_14.44.13-removebg-preview.png" class="logo">
+
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </button>
 
     <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -561,6 +729,10 @@ function openForm(){
 
 function closeForm(){
     document.getElementById("membershipForm").style.display="none";
+}
+
+function toggleMenu(){
+    document.querySelector("nav ul").classList.toggle("show");
 }
 </script>
 
